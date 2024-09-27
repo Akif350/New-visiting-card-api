@@ -11,11 +11,28 @@ const options = {
         },
         servers: [
             {
-                url: "http://localhost:8080" // Change base URL
+                url: "http://localhost:8080",
+                description: 'Visiting Cards APIs'
             },
         ],
+        components: {
+            securitySchemes: {
+                bearerAuth: {
+                    type: 'http',
+                    scheme: 'bearer',
+                    bearerFormat: 'JWT',
+                    description: 'Enter JWT token in the format: Bearer {token}'
+                }
+            }
+        },
+        security: [
+            {
+                bearerAuth: []
+            }
+        ]
     },
     apis: [
+        './routes/authRoutes.js',
         './routes/visitingCardRoutes.js'
     ]
 };

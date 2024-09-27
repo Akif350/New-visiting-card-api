@@ -107,7 +107,7 @@ const deleteVisitingCard = async (req, res) => {
 
 
 const getVisitingCardsByDate = async (req, res) => {
-  const { day, month, startDate, endDate } = req.query;
+  const { day, month, startDate, endDate } = req.body;
 
   try {
     let filter = {};
